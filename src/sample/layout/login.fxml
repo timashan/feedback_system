@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.loginControl" prefHeight="400.0" prefWidth="600.0" styleClass="blackPane1">
+    <top>
+        <HBox alignment="CENTER_RIGHT">
+            <padding><Insets top="20" right="20"/></padding>
+            <Button onAction="#quit" prefWidth="17" style="-fx-background-color: #605CA8;" styleClass="cancel_button" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <JFXTextField onKeyPressed="#loginEnterKey" fx:id="username" maxWidth="200" promptText="U S E R N A M E"/>
+            <JFXPasswordField onKeyPressed="#loginEnterKey" fx:id="password" maxWidth="200" promptText="P A S S W O R D"/>
+            <JFXButton fx:id="login" onAction="#samplePage" text="LOGIN" style="-fx-text-fill: #605CA8"/>
+            <Label fx:id="info" style="-fx-font-size: 15; -fx-text-fill: #d42020"/>
+        </VBox>
+    </center>
+</BorderPane>

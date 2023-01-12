@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.scene.image.ImageView?>
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.SettingsControl">
+
+    <ScrollPane styleClass="scroll-bar">
+        <padding><Insets left="30" right="30" top="30" bottom="30"/></padding>
+
+        <VBox spacing="30">
+
+            <GridPane hgap="20" vgap="15" style="-fx-border-color: #605CA8; -fx-border-radius: 5">
+                <padding><Insets left="30" right="30" top="30" bottom="30"/></padding>
+                <Label text="THEME" style="-fx-font-size: 25; -fx-text-fill: #605CA8"/>
+
+                <Label text="Theme : " style="-fx-font-size: 15" GridPane.rowIndex="1"/>
+                <JFXComboBox fx:id="theme" onAction="#selectTheme" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Dark"/>
+                            <String fx:value="Light"/>
+                        </FXCollections>
+                    </items>
+                </JFXComboBox>
+
+            </GridPane>
+
+            <GridPane hgap="20" vgap="15" style="-fx-border-color: #605CA8; -fx-border-radius: 5">
+                <padding><Insets left="30" right="30" top="30" bottom="30"/></padding>
+
+                <Label text="CHART SETTINGS" style="-fx-font-size: 25; -fx-text-fill: #605CA8"/>
+
+                <Label text="Chart type : " style="-fx-font-size: 15" GridPane.rowIndex="1"/>
+
+                <JFXComboBox fx:id="chartType" onAction="#selectChartType" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="doughnut"/>
+                            <String fx:value="pie"/>
+                        </FXCollections>
+                    </items>
+                </JFXComboBox>
+
+                <Accordion GridPane.rowIndex="2">
+                    <panes>
+                        <TitledPane text="Border Colors" style="-fx-background: transparent" >
+                            <GridPane>
+                                <Label text="BorderColor 1 : " style="-fx-font-size: 15;" GridPane.rowIndex="1"/>
+                                <JFXTextField fx:id="borderColor1" maxWidth="300" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="BorderColor 2 : " style="-fx-font-size: 15;" GridPane.rowIndex="2"/>
+                                <JFXTextField fx:id="borderColor2" maxWidth="300" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="BorderColor 3 : " style="-fx-font-size: 15;" GridPane.rowIndex="3"/>
+                                <JFXTextField fx:id="borderColor3" maxWidth="300" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="BorderColor 4 : " style="-fx-font-size: 15;" GridPane.rowIndex="4"/>
+                                <JFXTextField fx:id="borderColor4" maxWidth="300" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                                <Label text="BorderColor 5 : " style="-fx-font-size: 15;" GridPane.rowIndex="5"/>
+                                <JFXTextField fx:id="borderColor5" maxWidth="300" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                            </GridPane>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+
+                <Accordion GridPane.rowIndex="3">
+                    <panes>
+                        <TitledPane text="Background Colors" style="-fx-background: transparent" >
+                            <GridPane>
+                                <Label text="BackgroundColor 1 : " style="-fx-font-size: 15;" GridPane.rowIndex="1"/>
+                                <JFXTextField fx:id="backgroundColor1" maxWidth="300" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="BackgroundColor 2 : " style="-fx-font-size: 15;" GridPane.rowIndex="2"/>
+                                <JFXTextField fx:id="backgroundColor2" maxWidth="300" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="BackgroundColor 3 : " style="-fx-font-size: 15;" GridPane.rowIndex="3"/>
+                                <JFXTextField fx:id="backgroundColor3" maxWidth="300" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="BackgroundColor 4 : " style="-fx-font-size: 15;" GridPane.rowIndex="4"/>
+                                <JFXTextField fx:id="backgroundColor4" maxWidth="300" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                                <Label text="BackgroundColor 5 : " style="-fx-font-size: 15;" GridPane.rowIndex="5"/>
+                                <JFXTextField fx:id="backgroundColor5" maxWidth="300" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                            </GridPane>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+
+                <ImageView fx:id="quickChart" fitHeight="300" fitWidth="400" preserveRatio="true" GridPane.rowIndex="4"/>
+
+            </GridPane>
+
+            <HBox GridPane.rowIndex="5" spacing="10">
+                <Button onAction="#saveSettings" text="SAVE" styleClass="button_normal"/>
+                <Button onAction="#defaultColors" text="DEFAULT" styleClass="button_normal"/>
+            </HBox>
+
+        </VBox>
+
+    </ScrollPane>
+
+</VBox>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.ActivityControl" spacing="20">
+
+    <JFXComboBox fx:id="comboBox" onAction="#select">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="doughnut"/>
+                <String fx:value="pie"/>
+            </FXCollections>
+        </items>
+    </JFXComboBox>
+
+    <ScrollPane styleClass="scroll-bar" >
+
+        <VBox fx:id="activityPanel" spacing="20"/>
+
+    </ScrollPane>
+</VBox>

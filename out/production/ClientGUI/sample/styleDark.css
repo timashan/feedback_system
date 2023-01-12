@@ -1,0 +1,111 @@
+.blackPane1{
+   -fx-background-color: #141212;
+}
+
+.blackPane2{
+   -fx-background-color: #100F0F;
+}
+
+.button{
+   -fx-text-fill: white;
+   -fx-font-size: 20px;
+}
+
+.label{
+   -fx-text-fill: white;
+   -fx-font-size: 30px
+}
+
+.radio-button{
+   -fx-text-fill: #605CA8;
+   -fx-font-size: 30px
+}
+
+.button_side{
+   -fx-text-fill: #bfb8b8;
+   -fx-background-color: #100F0F;
+   -fx-pref-width: infinity;
+   -fx-pref-height: 75;
+   -fx-font-size: 20px;
+}
+
+.button_side:hover{
+   -fx-text-fill: #605CA8;
+}
+
+.button_side:selected{
+   -fx-background-color: #605CA8;
+   -fx-text-fill: white;
+}
+
+#button_side_logout:hover{
+   -fx-text-fill: #d42020;
+}
+
+
+.button_normal{
+   -fx-background-color: #141212;
+   -fx-border-color: #605CA8;
+   -fx-border-radius: 10;
+}
+
+.button_normal:hover{
+   -fx-text-fill: #605CA8;
+}
+
+.button_normal:pressed{
+   -fx-text-fill: white;
+   -fx-background-color: #605CA8;
+}
+
+.cancel_button {
+   -fx-font-size: 8px;
+   -fx-background-color: #605CA8;
+   -fx-shape:"M331.378,331.378c-8.533,8.533-22.756,8.533-31.289,0l-72.533-72.533l-72.533,72.533
+   c-8.533,8.533-22.756,8.533-31.289,0c-8.533-8.533-8.533-22.756,0-31.289l72.533-72.533l-72.533-72.533
+   c-8.533-8.533-8.533-22.756,0-31.289c8.533-8.533,22.756-8.533,31.289,0l72.533,72.533l72.533-72.533
+   c8.533-8.533,22.756-8.533,31.289,0c8.533,8.533,8.533,22.756,0,31.289l-72.533,72.533l72.533,72.533
+   C339.911,308.622,339.911,322.844,331.378,331.378z";
+}
+
+.cancel_button:hover{
+   -fx-translate-y: 5;
+   -fx-background-color: #d42020;
+}
+
+/*.scroll-pane:vertical{*/
+/*   -fx-background-insets: 0;*/
+/*   -fx-padding: 0;*/
+/*}*/
+
+.titled-pane{
+   -fx-color: #141212;
+   -fx-text-fill: white;
+   -fx-font-size: 15
+}
+
+.titled-pane:expanded >.title{
+   -fx-color: #605CA8;
+}
+
+.titled-pane:collapsed> .title:hover{
+   -fx-color: #141212;
+}
+
+.scroll-bar{
+   -fx-background: #141212;
+   -fx-color: #605CA8;
+   -fx-background-color: transparent;
+}
+
+.jfx-slider{
+   -fx-font-size: 25;
+}
+
+/*.jfx-scroll-pane .main-header{*/
+/*   -fx-background-color: #3949ab;*/
+/*}*/
+
+/*.jfx-scroll-pane .condensed-header{*/
+/*   -fx-background-color: #20aefa;*/
+/*}*/

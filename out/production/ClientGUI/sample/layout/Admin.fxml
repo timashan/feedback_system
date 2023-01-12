@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Admin">
+
+    <top>
+        <VBox alignment="CENTER">
+            <padding><Insets top="20" bottom="20"></Insets></padding>
+            <Button onAction="#reloadBtn" text="REFRESH" styleClass="button_normal" />
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane styleClass="scroll-bar">
+            <padding><Insets left="20" right="20"></Insets></padding>
+            <VBox fx:id="userPanel" spacing="10" alignment="CENTER"/>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

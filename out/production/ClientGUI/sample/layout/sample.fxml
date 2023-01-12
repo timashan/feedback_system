@@ -1,0 +1,57 @@
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" styleClass="blackPane1">
+
+    <top>
+        <HBox alignment="CENTER_RIGHT">
+            <padding><Insets top="20" right="20" bottom="10"/></padding>
+            <Button onAction="#quit" prefWidth="17" styleClass="cancel_button"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sideBar" spacing="20" prefWidth="360" alignment="CENTER" styleClass="blackPane2">
+            <fx:define>
+                <ToggleGroup fx:id="button_Side"/>
+            </fx:define>
+
+            <ToggleButton fx:id="dashboard" onAction="#dashboard" selected="true" text="D A S H B O A R D" styleClass="button_side" toggleGroup="$button_Side"/>
+            <ToggleButton fx:id="admin" onAction="#admin" text="A D M I N" styleClass="button_side" toggleGroup="$button_Side"/>
+            <ToggleButton fx:id="activity" onAction="#activity" text="A C T I V I T Y" styleClass="button_side" toggleGroup="$button_Side"/>
+            <ToggleButton fx:id="profile" onAction="#profile" text="P R O F I L E" styleClass="button_side" toggleGroup="$button_Side"/>
+            <ToggleButton fx:id="settings" onAction="#settings" text="S E T T I N G S" styleClass="button_side" toggleGroup="$button_Side"/>
+            <Button fx:id="logout" onAction="#logout" text="LOGOUT" styleClass="button_side" id="button_side_logout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fx:id="centerPanel0" spacing="20">
+            <JFXScrollPane fx:id="scroll" styleClass="scroll-bar">
+
+                <mainHeader>
+                    <children>
+                        <VBox alignment="CENTER">
+                            <padding><Insets left="30" right="30"/></padding>
+                            <Label fx:id="quote" wrapText="true" style="-fx-font-size: 20; -fx-text-fill: white"/>
+                        </VBox>
+                    </children>
+                </mainHeader>
+
+                <bottomBar>
+                    <children>
+                        <JFXButton onAction="#nextQuote" text="NEXT" style="-fx-text-fill: white"/>
+                    </children>
+                </bottomBar>
+
+                <VBox fx:id="centerPanel" spacing="20">
+                    <padding><Insets top="30" right="30" left="30" bottom="30"/></padding>
+
+                </VBox>
+            </JFXScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

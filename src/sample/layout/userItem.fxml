@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.userItemControl" spacing="20" style="-fx-border-color: #605CA8; -fx-border-radius: 25;">
+    <padding><Insets left="30" right="30" top="5" bottom="5"/></padding>
+    <Label fx:id="status" text="Loading..." style="-fx-font-size: 20; -fx-text-fill: #d42020"/>
+    <Label fx:id="ipAddress" text="xxx" style="-fx-font-size: 20;"/>
+    <Label fx:id="userID" text="Loading..." style="-fx-font-size: 20"/>
+    <Label fx:id="username" text="Loading..." style="-fx-font-size: 20"/>
+    <Label fx:id="email" text="Loading..." style="-fx-font-size: 20"/>
+    <Label fx:id="role" text="Loading..." style="-fx-font-size: 20"/>
+
+</HBox>

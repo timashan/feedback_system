@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TitledPane?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.geometry.Insets?>
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.profileControl">
+    <padding><Insets top="30" right="30" left="30" bottom="30"/></padding>
+
+    <GridPane alignment="CENTER" hgap="20" vgap="15" style="-fx-border-color: #605CA8; -fx-border-radius: 5">
+        <padding><Insets top="30" right="30" left="30" bottom="30"/></padding>
+
+        <Label fx:id="role" text="-Role-" style="-fx-font-size: 20px; -fx-text-fill: #605CA8"/>
+
+        <Label text="Name : " style="-fx-font-size: 20px;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <JFXTextField fx:id="firstname" promptText="First Name" style="-fx-font-size: 20" maxWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#verifyInput"/>
+        <JFXTextField fx:id="lastname" promptText="Last Name" style="-fx-font-size: 20" maxWidth="300" GridPane.columnIndex="2" GridPane.rowIndex="1" onKeyTyped="#verifyInput"/>
+
+        <Label text="Username : " style="-fx-font-size: 20px;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <JFXTextField onKeyTyped="#verifyInput" fx:id="username" promptText="Username" style="-fx-font-size: 20" maxWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label fx:id="usernameStatus" text="Loading..." style="-fx-font-size: 15; -fx-text-fill: #d42020" GridPane.columnIndex="2" GridPane.rowIndex="2" visible="false"/>
+
+        <Label text="Email : " style="-fx-font-size: 20px;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <JFXTextField onKeyTyped="#verifyInput" fx:id="email" promptText="Email" style="-fx-font-size: 20" maxWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+        <Label fx:id="emailStatus" text="Loading..." style="-fx-font-size: 15; -fx-text-fill: #d42020" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.halignment="CENTER" visible="false"/>
+
+        <Accordion GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-background: transparent">
+            <panes>
+                <TitledPane text="P A S S W O R D">
+                    <VBox>
+                        <JFXPasswordField onKeyTyped="#verifyInput" fx:id="oldPassword" promptText="Current Password" style="-fx-font-size: 20" maxWidth="300"/>
+                        <JFXPasswordField onKeyTyped="#verifyInput" fx:id="newPassword" promptText="New Password" style="-fx-font-size: 20" maxWidth="300"/>
+                        <JFXPasswordField onKeyTyped="#verifyInput" fx:id="retypePassword" promptText="Retype New Password" style="-fx-font-size: 20" maxWidth="300"/>
+                        <Label fx:id="passwordStatus" style="-fx-font-size: 15; -fx-text-fill: #d42020"/>
+                    </VBox>
+                </TitledPane>
+            </panes>
+        </Accordion>
+
+
+        <Button fx:id="save" onAction="#save" text="SAVE" GridPane.rowIndex="5" styleClass="button_normal" disable="true"/>
+
+        <Label fx:id="updateLabel" text="PROFILE UPDATED" style="-fx-font-size: 20; -fx-text-fill: #20aefa" GridPane.rowIndex="6" visible="false"/>
+    </GridPane>
+</VBox>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox spacing="30" fx:controller="sample.feedBackControl" xmlns:fx="http://javafx.com/fxml">
+    <padding><Insets right="50" left="50" top="20" bottom="20"/></padding>
+
+    <Label fx:id="question" text="loading..." wrapText="true"/>
+
+    <GridPane fx:id="answerPane" hgap="150">
+
+        <fx:define>
+            <ToggleGroup fx:id="toggleAnswer"/>
+        </fx:define>
+
+        <JFXSlider onMouseReleased="#select" fx:id="rate" GridPane.columnSpan="5" min="0" max="5" majorTickUnit="1" minorTickCount="0" showTickLabels="true" snapToTicks="true" prefHeight="100"/>
+
+        <HBox alignment="BASELINE_RIGHT" fx:id="emojiPanel" GridPane.rowIndex="1" GridPane.columnSpan="5" spacing="60">
+            <ImageView fx:id="emoji1" fitHeight="50" preserveRatio="true"/>
+            <ImageView fx:id="emoji2" fitHeight="50" preserveRatio="true"/>
+            <ImageView fx:id="emoji3" fitHeight="50" preserveRatio="true"/>
+            <ImageView fx:id="emoji4" fitHeight="50" preserveRatio="true"/>
+            <ImageView fx:id="emoji5" fitHeight="50" preserveRatio="true"/>
+        </HBox>
+
+        <JFXRadioButton onAction="#select" fx:id="slot1" GridPane.rowIndex="1" GridPane.columnIndex="0" toggleGroup="$toggleAnswer" id="1"/>
+        <JFXRadioButton onAction="#select" fx:id="slot2" GridPane.rowIndex="2" GridPane.columnIndex="0" toggleGroup="$toggleAnswer" id="2"/>
+        <JFXRadioButton onAction="#select" fx:id="slot3" GridPane.rowIndex="3" GridPane.columnIndex="0" toggleGroup="$toggleAnswer" id="3"/>
+        <JFXRadioButton onAction="#select" fx:id="slot4" GridPane.rowIndex="4" GridPane.columnIndex="0" toggleGroup="$toggleAnswer" id="4"/>
+        <JFXRadioButton onAction="#select" fx:id="slot5" GridPane.rowIndex="5" GridPane.columnIndex="0" toggleGroup="$toggleAnswer" id="5"/>
+
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button fx:id="previous" onAction="#previousPage" text="PREVIOUS" styleClass="button_normal"/>
+        <Button fx:id="next" onAction="#nextPage" text="NEXT" styleClass="button_normal"/>
+    </HBox>
+
+    <VBox spacing="10">
+        <JFXButton fx:id="submit" onAction="#submit" text="SUBMIT" style="-fx-text-fill: #d42020" visible="false"/>
+        <Label fx:id="status" style="-fx-text-fill: #d42020; -fx-font-size: 20"/>
+    </VBox>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button fx:id="back" onAction="#samplePage" text="BACK" styleClass="button_normal"/>
+    </HBox>
+</VBox>
